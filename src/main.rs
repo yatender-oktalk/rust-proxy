@@ -25,6 +25,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     loop {
         let (stream, client_addr) = listener.accept().await?;
+        println!("{:?}", stream);
         println!("Received connection from {}", client_addr);
 
         tokio::spawn(async move {
